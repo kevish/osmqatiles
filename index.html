@@ -18,11 +18,11 @@
         northEast = L.latLng(75, 179),
         bounds = L.latLngBounds(southWest, northEast);
     var map = L.mapbox.map('map', 'kevrein.1b9ln7uw',{
-        tileLayer: {
-            detectRetina: true,
             maxBounds: bounds,
             maxZoom: 7,
-            minZoom: 3
+            minZoom: 3,
+        tileLayer: {
+            detectRetina: true
         }
     })
 </script>
