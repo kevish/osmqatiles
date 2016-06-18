@@ -46,7 +46,7 @@
     }).setView([0,0], 3);
     var layers = {
       BordersOff: L.mapbox.tileLayer('kevrein.ayboz6yo', { detectRetina: true }),
-      BordersOn: L.mapbox.tileLayer('kevrein.0dwpzctb'), { detectRetina: true })
+      BordersOn: L.mapbox.tileLayer('kevrein.0dwpzctb', { detectRetina: true })
   };
   layers.BordersOff.addTo(map);
   L.control.layers(layers).addTo(map);
