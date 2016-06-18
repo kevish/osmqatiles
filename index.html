@@ -3,8 +3,8 @@
     <meta charset=utf-8 />
     <title>World-Wide Flight Patterns</title>
     <meta name='viewport' content='initial-scale=2,maximum-scale=1,user-scalable=no' />
-    <script src='https://api.tiles.mapbox.com/mapbox.js/v2.2.3/mapbox.js'></script>
-    <link href='https://api.tiles.mapbox.com/mapbox.js/v2.2.3/mapbox.css' rel='stylesheet' />
+    <script src='https://api.tiles.mapbox.com/mapbox.js/v2.4.0/mapbox.js'></script>
+    <link href='https://api.tiles.mapbox.com/mapbox.js/v2.4.0/mapbox.css' rel='stylesheet' />
     <meta property="og:type" content="website" />
     <meta property="og:title" content="Worldwide Airline Routes and Flight Patterns Posters" />
     <meta property="og:description" content="Poster of data that visualizes over 60,000 flight routes and flight patterns around the world" />
@@ -36,7 +36,7 @@
     var southWest = L.latLng(-57, -179),
         northEast = L.latLng(75, 179),
         bounds = L.latLngBounds(southWest, northEast);
-    var map = L.mapbox.map('map', 'kevrein.ayboz6yo',{
+    var map = L.mapbox.map('map', null,{
             maxBounds: bounds,
             maxZoom: 5,
             minZoom: 2,
@@ -44,6 +44,12 @@
             detectRetina: true
         }
     }).setView([0,0], 3);
+    var layers = {
+      BordersOff: L.mapbox.tileLayer('kevrein.ayboz6yo'),
+      BordersOn: L.mapbox.tileLayer('kevrein.0dwpzctb')
+  };
+  layers.BordersOn.addTo(map);
+  L.control.layers(layers).addTo(map);
 </script>
 <script>
   (function(i,s,o,g,r,a,m){i['GoogleAnalyticsObject']=r;i[r]=i[r]||function(){
