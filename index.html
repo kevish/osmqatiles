@@ -45,8 +45,8 @@
         }
     }).setView([0,0], 3);
     var layers = {
-      No Borders: L.mapbox.tileLayer('kevrein.ayboz6yo'),
-      Borders: L.mapbox.tileLayer('kevrein.0dwpzctb')
+      BordersOff: L.mapbox.tileLayer('kevrein.ayboz6yo'),
+      BordersOn: L.mapbox.tileLayer('kevrein.0dwpzctb')
   };
   layers.Borders.addTo(map);
   L.control.layers(layers).addTo(map);
