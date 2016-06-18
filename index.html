@@ -36,7 +36,7 @@
     var southWest = L.latLng(-57, -179),
         northEast = L.latLng(75, 179),
         bounds = L.latLngBounds(southWest, northEast);
-    var map = L.mapbox.map('map', null,{
+    var map = L.mapbox.map('map', 'kevrein.9ir0f5a6',{
             maxBounds: bounds,
             maxZoom: 5,
             minZoom: 2,
@@ -44,22 +44,14 @@
             detectRetina: true
         }
     }).setView([0,0], 3);
-    var layers = {
-      BordersOff: L.mapbox.tileLayer('kevrein.ayboz6yo'),
-      BordersOn: L.mapbox.tileLayer('kevrein.0dwpzctb')
-  };
-  layers.BordersOn.addTo(map);
-  L.control.layers(layers).addTo(map);
 </script>
 <script>
   (function(i,s,o,g,r,a,m){i['GoogleAnalyticsObject']=r;i[r]=i[r]||function(){
   (i[r].q=i[r].q||[]).push(arguments)},i[r].l=1*new Date();a=s.createElement(o),
   m=s.getElementsByTagName(o)[0];a.async=1;a.src=g;m.parentNode.insertBefore(a,m)
   })(window,document,'script','//www.google-analytics.com/analytics.js','ga');
-
   ga('create', 'UA-54893253-1', 'auto');
   ga('send', 'pageview');
-
 </script>
 </body>
 </html>
