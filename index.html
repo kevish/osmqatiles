@@ -28,6 +28,19 @@
     <style>
         body { margin:0; padding:0; background-color: #272727;}
         #map { position:absolute; top:25px; bottom:0; width:100%; }
+        a.hovclass {
+            font-size: 18px;
+            font-family: Verdana,sans-serif;
+            text-decoration: none;
+            padding: 3px;
+            color: rgb(128, 203, 255);
+            transition: background .25s ease-in-out;
+            -moz-transition: background .25s ease-in-out;
+            -webkit-transition: background .25s ease-in-out;
+        }
+        a.hovclass:hover {
+            background-color: #797b80;
+        }
     </style>
 </head>
 <body>
@@ -40,19 +53,9 @@
     '//www.googletagmanager.com/gtm.js?id='+i+dl;f.parentNode.insertBefore(j,f);
     })(window,document,'script','dataLayer','GTM-WHR68P');</script>
     <!-- End Google Tag Manager -->
-<a href="https://www.amazon.com/World-Flight-Patterns-26-38/dp/B01GSHUCTC" onclick="trackOutboundLink('https://www.amazon.com/World-Flight-Patterns-26-38/dp/B01GSHUCTC'); return false;" style="
-    font-size: 18px;
-    font-family: Verdana,sans-serif;
-    text-decoration: none;
-    color: rgb(128, 203, 255);
+<a href="https://www.amazon.com/World-Flight-Patterns-26-38/dp/B01GSHUCTC" class="hovclass" onclick="trackOutboundLink('https://www.amazon.com/World-Flight-Patterns-26-38/dp/B01GSHUCTC'); return false;" 
 ">Prints Available Here</a>
-<a href="http://kevish.github.io" style="
-    font-size: 18px;
-    font-family: Verdana,sans-serif;
-    float: Right;
-    text-decoration: none;
-    color: rgb(128, 203, 255);
- -">More Information</a>
+<a href="http://kevish.github.io" class="hovclass" style="float: Right" >More Information</a>
 <div id='map'></div>
 <script>
     L.mapbox.accessToken = 'pk.eyJ1Ijoia2V2cmVpbiIsImEiOiJfQ0RHX2hZIn0.hI4lNnug0mHlUQ16xX3fIg';
