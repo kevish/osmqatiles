@@ -1,63 +1,22 @@
+<!DOCTYPE html>
 <html>
 <head>
-    <meta charset=utf-8 />
-    <title>World-Wide Flight Patterns</title>
-    <meta name='viewport' content='initial-scale=2,maximum-scale=1,user-scalable=no' />
-    <script src='https://api.tiles.mapbox.com/mapbox.js/v2.4.0/mapbox.js'></script>
-    <link href='https://api.tiles.mapbox.com/mapbox.js/v2.4.0/mapbox.css' rel='stylesheet' />
-    <meta property="og:type" content="website" />
-    <meta property="og:title" content="Worldwide Airline Routes and Flight Patterns Posters" />
-    <meta property="og:description" content="Poster of data that visualizes over 60,000 flight routes and flight patterns around the world" />
-    <meta property="og:image" content="http://i.imgur.com/xdlNeit.png" />
-    <meta property="og:image:width" content="500" />
-    <meta property="og:image:height" content="294" />
-    <style>
-        body { margin:0; padding:0; background-color: #272727;}
-        #map { position:absolute; top:25px; bottom:0; width:100%; }
-        a.hovclass {
-            font-size: 18px;
-            font-family: Verdana,sans-serif;
-            text-decoration: none;
-            padding: 3px;
-            color: rgb(128, 203, 255);
-            transition: background .25s ease-in-out;
-            -moz-transition: background .25s ease-in-out;
-            -webkit-transition: background .25s ease-in-out;
-            background-color: #585858;
-        }
-        a.hovclass:hover {
-            background-color: #797b80;
-        }
-    </style>
+<meta charset=utf-8 />
+<title>A simple map</title>
+<meta name='viewport' content='initial-scale=1,maximum-scale=1,user-scalable=no' />
+<script src='https://api.mapbox.com/mapbox.js/v2.4.0/mapbox.js'></script>
+<link href='https://api.mapbox.com/mapbox.js/v2.4.0/mapbox.css' rel='stylesheet' />
+<style>
+  body { margin:0; padding:0; }
+  #map { position:absolute; top:0; bottom:0; width:100%; }
+</style>
 </head>
 <body>
+<div id='map'></div>
 <script>
-    L.mapbox.accessToken = 'pk.eyJ1Ijoia2V2cmVpbiIsImEiOiJfQ0RHX2hZIn0.hI4lNnug0mHlUQ16xX3fIg';
-    var southWest = L.latLng(-57, -179),
-        northEast = L.latLng(75, 179),
-        bounds = L.latLngBounds(southWest, northEast);
-    var map = L.mapbox.map('map', null,{
-            maxBounds: bounds,
-            maxZoom: 24,
-            minZoom: 12,
-        tileLayer: {
-            detectRetina: true
-        }
-    }).setView([37.772292151125505, -122.40674436092377], 17);
-    var layers = {
-      BordersOff: L.mapbox.tileLayer('aaronlidman.b02452c3', { detectRetina: true }),
-      BordersOn: L.mapbox.tileLayer('kevrein.0dwpzctb', { detectRetina: true })
-  };
-  layers.BordersOff.addTo(map);
-  L.control.layers(layers).addTo(map);
-</script>
-<script>
-  (function(i,s,o,g,r,a,m){i['GoogleAnalyticsObject']=r;i[r]=i[r]||function(){
-  (i[r].q=i[r].q||[]).push(arguments)},i[r].l=1*new Date();a=s.createElement(o),
-  m=s.getElementsByTagName(o)[0];a.async=1;a.src=g;m.parentNode.insertBefore(a,m)
-  })(window,document,'script','//www.google-analytics.com/analytics.js','ga');
-  ga('create', 'UA-54893253-1', 'auto');
-  ga('send', 'pageview');
+L.mapbox.accessToken = 'pk.eyJ1Ijoia2V2aW5yZWluIiwiYSI6ImFlY0l3UVEifQ.Ui-o72tW-jsWmfbnXM-wLw';
+var map = L.mapbox.map('map', 'aaronlidman.b02452c3'')
+    .setView([37.772292151125505, -122.40674436092377], 17);
 </script>
 </body>
 </html>
